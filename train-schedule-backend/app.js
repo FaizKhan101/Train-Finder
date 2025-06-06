@@ -12,6 +12,9 @@ app.use(cors())
 
 app.use(express.static("public"))
 app.use(trainRouter)
+app.use('/', (req, res) => {
+    res.redirect('/')
+})
 
 // mongoose.connect("mongodb://localhost:27017/trains").then(() => {
 mongoose.connect("mongodb+srv://FaizKhan:tnUCYSotA0j30xAl@cluster0.3iavjwf.mongodb.net/trains").then(() => {
