@@ -10,7 +10,7 @@ function Home() {
   console.log(trains);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/trains`)
+    fetch(`/trains`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");
@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   function handleSearchTrain(text) {
-    fetch(`http://localhost:3000/trains/${text}`)
+    fetch(`/trains/${text}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");
@@ -40,7 +40,7 @@ function Home() {
       setComponent("list");
       return;
     }
-    fetch(`http://localhost:3000/trains/${trainNumber}/detail`)
+    fetch(`/trains/${trainNumber}/detail`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");

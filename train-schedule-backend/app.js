@@ -10,6 +10,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
+app.use(express.static("public"))
 app.use(trainRouter)
 
 // mongoose.connect("mongodb://localhost:27017/trains").then(() => {
