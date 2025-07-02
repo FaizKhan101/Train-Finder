@@ -32,6 +32,15 @@ export default function Header() {
         </NavLink>
 
         <NavLink
+          to="/add-train"
+          className={({ isActive }) =>
+            isActive ? "nav-link active text-primary fw-bold" : "nav-link"
+          }
+        >
+          Add Train
+        </NavLink>
+
+        <NavLink
           to="/about"
           className={({ isActive }) =>
             isActive ? "nav-link active text-primary fw-bold" : "nav-link"
