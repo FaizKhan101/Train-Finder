@@ -1,4 +1,36 @@
-export default function TrainDetail({ train, onBackClick }) {
+import { useNavigate, useParams } from "react-router-dom";
+import { TRAINS, updateTrain } from "../data";
+import { useContext, useState } from "react";
+import { AuthContext } from "./Auth.context";
+
+export default function TrainDetail() {
+  const { isAuthenticated } = useContext(AuthContext);
+  //access the train number from the url
+  const [isEditing, setIsEditing] = useState(false);
+  const { trainNumber } = useParams();
+  const [train, setTrain] = useState(
+    TRAINS.find((train) => train.train_number === trainNumber)
+  );
+  const navigate = useNavigate();
+
+  function handleEdit() {
+    setIsEditing(true);
+  }
+
+  function handleTimeChange(e, id) {
+    train.route.forEach((route) => {
+      if (route._id === id && route.arrival_time !== e.target.value) {
+        route.new_arrival_time = e.target.value;
+      }
+    });
+    setTrain({ ...train });
+  }
+
+  function handleSave() {
+    setIsEditing(false);
+    updateTrain(train);
+  }
+
   return (
     <div className="card mt-4">
       <h5 className="card-header">{train.train_name}</h5>
@@ -8,19 +40,46 @@ export default function TrainDetail({ train, onBackClick }) {
           Departure Days: [{train.departure_days.join(", ")}]
         </p>
 
-        <h5 className="card-text">Routes</h5>
+        <h5 className="card-text">
+          Routes{" "}
+          <span onClick={isAuthenticated ? handleEdit : () => navigate("/auth")} className="pointer">
+            ✏️
+          </span>
+        </h5>
         <ol className="list-group list-group-numbered">
           {train.route.map((place) => (
             <li className="list-group-item flex-column " key={place.station}>
-              {place.station} - Time: {place.arrival_time}
+              {place.station} - Time:{" "}
+              {isEditing ? (
+                <input
+                  className="form-control"
+                  type="text"
+                  value={place.new_arrival_time || place.arrival_time}
+                  onChange={(e) => handleTimeChange(e, place._id)}
+                />
+              ) : (
+                <span className="pointer" onClick={handleEdit}>
+                  { place.arrival_time}
+                </span>
+              )}
+              {!isEditing && place.new_arrival_time && (
+                <span className="pointer text-danger" onClick={handleEdit}>
+                  <b>
+                    {" - "} 
+                    {place.new_arrival_time}
+                  </b>
+                </span>
+              )}
             </li>
           ))}
         </ol>
+        {isEditing && (
+          <button onClick={handleSave} className="btn btn-warning mt-4 me-3">
+            Save
+          </button>
+        )}
 
-        <button
-          onClick={() => onBackClick(false)}
-          className="btn btn-primary mt-4"
-        >
+        <button onClick={() => navigate("/")} className="btn btn-primary mt-4">
           Back
         </button>
       </div>

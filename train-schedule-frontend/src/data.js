@@ -1,0 +1,479 @@
+
+export const TRAINS = [
+  {
+    _id: "68418276c19d3d48b7b0ddf9",
+    train_number: "09501",
+    train_name: "Bhopal - Pipariya Express",
+    departure_days: ["Friday", "Wednesday", "Thursday", "Saturday", "Tuesday"],
+    departure_time: "05:45",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "05:45",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0ddfa",
+      },
+      {
+        station: "Shujalpur",
+        arrival_time: "07:09",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0ddfb",
+      },
+      {
+        station: "Hoshangabad",
+        arrival_time: "08:18",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0ddfc",
+      },
+      {
+        station: "Pipariya",
+        arrival_time: "09:24",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0ddfd",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0ddfe",
+    train_number: "09502",
+    train_name: "Bhopal - Ratlam Express",
+    departure_days: ["Saturday", "Monday", "Sunday", "Tuesday"],
+    departure_time: "07:45",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "07:45",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0ddff",
+      },
+      {
+        station: "Bina",
+        arrival_time: "08:42",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de00",
+      },
+      {
+        station: "Itarsi",
+        arrival_time: "09:50",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de01",
+      },
+      {
+        station: "Ratlam",
+        arrival_time: "11:25",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de02",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de03",
+    train_number: "09503",
+    train_name: "Bhopal - Katni Express",
+    departure_days: ["Sunday", "Tuesday", "Friday"],
+    departure_time: "06:00",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "06:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de04",
+      },
+      {
+        station: "Vidisha",
+        arrival_time: "06:50",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de05",
+      },
+      {
+        station: "Itarsi",
+        arrival_time: "08:10",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de06",
+      },
+      {
+        station: "Katni",
+        arrival_time: "09:45",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de07",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de08",
+    train_number: "09504",
+    train_name: "Bhopal - Jabalpur Intercity",
+    departure_days: ["Monday", "Wednesday", "Friday", "Sunday"],
+    departure_time: "06:15",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "06:15",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de09",
+      },
+      {
+        station: "Hoshangabad",
+        arrival_time: "07:10",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de0a",
+      },
+      {
+        station: "Pipariya",
+        arrival_time: "08:35",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de0b",
+      },
+      {
+        station: "Jabalpur",
+        arrival_time: "10:05",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de0c",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de0d",
+    train_number: "09505",
+    train_name: "Bhopal - Dewas Passenger",
+    departure_days: ["Tuesday", "Thursday", "Saturday"],
+    departure_time: "08:00",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "08:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de0e",
+      },
+      {
+        station: "Sehore",
+        arrival_time: "08:45",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de0f",
+      },
+      {
+        station: "Ujjain",
+        arrival_time: "10:05",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de10",
+      },
+      {
+        station: "Dewas",
+        arrival_time: "10:55",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de11",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de12",
+    train_number: "09506",
+    train_name: "Bhopal - Gwalior MEMU",
+    departure_days: ["Monday", "Wednesday", "Friday"],
+    departure_time: "05:30",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "05:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de13",
+      },
+      {
+        station: "Vidisha",
+        arrival_time: "06:20",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de14",
+      },
+      {
+        station: "Bina",
+        arrival_time: "07:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de15",
+      },
+      {
+        station: "Gwalior",
+        arrival_time: "09:15",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de16",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de17",
+    train_number: "09507",
+    train_name: "Bhopal - Chhindwara Passenger",
+    departure_days: ["Monday", "Thursday", "Saturday"],
+    departure_time: "06:40",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "06:40",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de18",
+      },
+      {
+        station: "Obedullaganj",
+        arrival_time: "07:25",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de19",
+      },
+      {
+        station: "Itarsi",
+        arrival_time: "08:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de1a",
+      },
+      {
+        station: "Parasia",
+        arrival_time: "10:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de1b",
+      },
+      {
+        station: "Chhindwara",
+        arrival_time: "11:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de1c",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de1d",
+    train_number: "09508",
+    train_name: "Bhopal - Indore Intercity",
+    departure_days: ["Tuesday", "Wednesday", "Friday", "Saturday"],
+    departure_time: "07:30",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "07:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de1e",
+      },
+      {
+        station: "Sehore",
+        arrival_time: "08:10",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de1f",
+      },
+      {
+        station: "Ujjain",
+        arrival_time: "09:25",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de20",
+      },
+      {
+        station: "Indore",
+        arrival_time: "10:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de21",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de22",
+    train_number: "09509",
+    train_name: "Bhopal - Narsinghpur Fast",
+    departure_days: ["Tuesday", "Thursday", "Sunday"],
+    departure_time: "06:20",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "06:20",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de23",
+      },
+      {
+        station: "Itarsi",
+        arrival_time: "07:35",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de24",
+      },
+      {
+        station: "Ganj Basoda",
+        arrival_time: "08:55",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de25",
+      },
+      {
+        station: "Narsinghpur",
+        arrival_time: "10:10",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de26",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "68418276c19d3d48b7b0de27",
+    train_number: "09510",
+    train_name: "Bhopal - Ujjain MEMU",
+    departure_days: ["Monday", "Thursday", "Saturday", "Sunday"],
+    departure_time: "17:00",
+    route: [
+      {
+        station: "Bhopal Junction",
+        arrival_time: "17:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de28",
+      },
+      {
+        station: "Sehore",
+        arrival_time: "17:45",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de29",
+      },
+      {
+        station: "Kalapipal",
+        arrival_time: "18:30",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de2a",
+      },
+      {
+        station: "Maksi",
+        arrival_time: "19:15",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de2b",
+      },
+      {
+        station: "Ujjain",
+        arrival_time: "20:00",
+        new_arrival_time: null,
+        _id: "68418276c19d3d48b7b0de2c",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "685fa0bc29254a6d4ee8eec5",
+    train_number: "12174",
+    train_name: "Udyog Nagri",
+    departure_days: ["Monday"],
+    departure_time: "13:30",
+    route: [
+      {
+        station: "test",
+        arrival_time: "13:30",
+        new_arrival_time: null,
+        _id: "685fa0bc29254a6d4ee8eec6",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "685fa24c29254a6d4ee8ef78",
+    train_number: "12322",
+    train_name: "Sarasvati express",
+    departure_days: ["Monday", "Tuesday", "Wednesday"],
+    departure_time: "15:35",
+    route: [
+      {
+        station: "test 1",
+        arrival_time: "13:37",
+        new_arrival_time: null,
+        _id: "685fa24c29254a6d4ee8ef79",
+      },
+      {
+        station: "test 2",
+        arrival_time: "09:35",
+        new_arrival_time: null,
+        _id: "685fa24c29254a6d4ee8ef7a",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "685faebdd3c71ef4741cf36a",
+    train_number: "322332",
+    train_name: "ABC",
+    departure_days: ["Monday", "Saturday", "Wednesday"],
+    departure_time: "14:30",
+    route: [
+      {
+        station: "Delhi",
+        arrival_time: "18:28",
+        new_arrival_time: null,
+        _id: "685faebdd3c71ef4741cf36b",
+      },
+      {
+        station: "Kanpur",
+        arrival_time: "17:31",
+        new_arrival_time: null,
+        _id: "685faebdd3c71ef4741cf36c",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "685faf08d3c71ef4741cf36e",
+    train_number: "323232",
+    train_name: "XYZ",
+    departure_days: ["Monday", "Saturday", "Wednesday"],
+    departure_time: "14:29",
+    route: [
+      {
+        station: "test 1",
+        arrival_time: "19:29",
+        new_arrival_time: null,
+        _id: "685faf08d3c71ef4741cf36f",
+      },
+      {
+        station: "test 2",
+        arrival_time: "14:33",
+        new_arrival_time: null,
+        _id: "685faf08d3c71ef4741cf370",
+      },
+    ],
+    __v: 0,
+  },
+  {
+    _id: "685faf56d3c71ef4741cf3d6",
+    train_number: "432343",
+    train_name: "acsd",
+    departure_days: ["Monday", "Friday", "Sunday"],
+    departure_time: "14:33",
+    route: [
+      {
+        station: "test 1",
+        arrival_time: "20:31",
+        new_arrival_time: null,
+        _id: "685faf56d3c71ef4741cf3d7",
+      },
+    ],
+    __v: 0,
+  },
+];
+
+export const USERS = [
+  {
+    email: "admin@gmail.com",
+    password: "admin",
+  },
+];
+
+export function updateTrain(updatedTrain) {
+  const train = TRAINS.find((train) => train.train_number === updatedTrain.train_number);
+  train.route = updatedTrain.route;
+}
+
+export function login(email, password) {
+  const user = USERS.find((user) => user.email === email && user.password === password);
+  return user;
+}
+
+export function signup(email, password) {
+  if (USERS.find((user) => user.email === email)) {
+    return false;
+  } else {
+    USERS.push({ email, password });
+    return true;
+  }
+}

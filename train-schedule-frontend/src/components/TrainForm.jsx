@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function TrainForm({ onSubmit }) {
+export default function TrainForm() {
+  const navigate = useNavigate();
   const [train, setTrain] = useState({
     train_number: "",
     train_name: "",
@@ -44,7 +46,16 @@ export default function TrainForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(train);
+
+    console.log("Submitted Train:", train);
+    fetch("http://localhost:3000/train", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(train),
+    });
+
     setTrain({
       train_number: "",
       train_name: "",
@@ -52,10 +63,11 @@ export default function TrainForm({ onSubmit }) {
       departure_days: [],
       route: [],
     });
+    navigate("/");
+    // Optionally send it to backend here via fetch/axios
   };
 
   console.log(train);
-  
 
   const departureOptions = [
     "Monday",

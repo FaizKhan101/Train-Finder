@@ -1,8 +1,11 @@
 import { NavLink, Link } from "react-router-dom";
 
 import logoImg from "../assets/logo.jpeg";
+import { useContext } from "react";
+import { AuthContext } from "./Auth.context";
 
 export default function Header() {
+  const { isAuthenticated } = useContext(AuthContext);
   return (
     <header className="d-flex justify-content-between align-items-center p-3 bg-light shadow navbar">
       <div className="d-flex align-items-center">
@@ -32,7 +35,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          to="/add-train"
+          to={isAuthenticated ? "/add-train" : "/auth"}
           className={({ isActive }) =>
             isActive ? "nav-link active text-primary fw-bold" : "nav-link"
           }
