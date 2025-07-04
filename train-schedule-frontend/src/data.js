@@ -463,17 +463,3 @@ export function updateTrain(updatedTrain) {
   const train = TRAINS.find((train) => train.train_number === updatedTrain.train_number);
   train.route = updatedTrain.route;
 }
-
-export function login(email, password) {
-  const user = USERS.find((user) => user.email === email && user.password === password);
-  return user;
-}
-
-export function signup(email, password) {
-  if (USERS.find((user) => user.email === email)) {
-    return false;
-  } else {
-    USERS.push({ email, password });
-    return true;
-  }
-}

@@ -35,3 +35,11 @@ exports.postTrain = async (req, res) => {
     await train.save()
     res.json({ message: "Train added successfully." })
 }
+
+exports.updateTrain = async (req, res) => {
+    const updatedTrain = req.body
+    console.log(updatedTrain);
+
+    await Train.updateOne({ train_number: updatedTrain.train_number }, { $set: { route: updatedTrain.route } });
+    res.json({ message: "Train timing updated." })
+}

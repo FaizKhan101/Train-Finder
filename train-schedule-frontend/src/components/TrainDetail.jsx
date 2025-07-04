@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { TRAINS, updateTrain } from "../data";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Auth.context";
 
 export default function TrainDetail() {
@@ -31,6 +31,16 @@ export default function TrainDetail() {
     updateTrain(train);
   }
 
+  useEffect(() => {
+    fetch("http://localhost:3000/update-train", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(train),
+    });
+  }, [train]);
+
   return (
     <div className="card mt-4">
       <h5 className="card-header">{train.train_name}</h5>
@@ -42,7 +52,10 @@ export default function TrainDetail() {
 
         <h5 className="card-text">
           Routes{" "}
-          <span onClick={isAuthenticated ? handleEdit : () => navigate("/auth")} className="pointer">
+          <span
+            onClick={isAuthenticated ? handleEdit : () => navigate("/auth")}
+            className="pointer"
+          >
             ✏️
           </span>
         </h5>
@@ -59,13 +72,13 @@ export default function TrainDetail() {
                 />
               ) : (
                 <span className="pointer" onClick={handleEdit}>
-                  { place.arrival_time}
+                  {place.arrival_time}
                 </span>
               )}
               {!isEditing && place.new_arrival_time && (
                 <span className="pointer text-danger" onClick={handleEdit}>
                   <b>
-                    {" - "} 
+                    {" - "}
                     {place.new_arrival_time}
                   </b>
                 </span>

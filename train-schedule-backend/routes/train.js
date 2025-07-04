@@ -13,4 +13,6 @@ router.get("/trains/:trainNumber/detail", trainController.getTrainDetail)
 
 router.post("/train", trainController.postTrain)
 
+router.post("/update-train", trainController.updateTrain)
+
 module.exports = router
