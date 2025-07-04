@@ -50,5 +50,65 @@ export default function TrainDetail() {
       });
   }, [trainNumber]);
 
-  return;
+  return train ? (
+    <div className="card mt-4">
+      <h5 className="card-header">{train.train_name}</h5>
+      <div className="card-body">
+        <h5 className="card-title text-primary">{train.train_number}</h5>
+        <p className="card-text">
+          Departure Days: [{train.departure_days.join(", ")}]
+        </p>
+
+        <h5 className="card-text">
+          Routes{" "}
+          <span
+            onClick={isAuthenticated ? handleEdit : () => navigate("/auth")}
+            className="pointer"
+          >
+            ✏️
+          </span>
+        </h5>
+        <ol className="list-group list-group-numbered">
+          {train.route.map((place) => (
+            <li className="list-group-item flex-column " key={place.station}>
+              {place.station} - Time:{" "}
+              {isEditing ? (
+                <input
+                  className="form-control"
+                  type="text"
+                  value={place.new_arrival_time || place.arrival_time}
+                  onChange={(e) => handleTimeChange(e, place._id)}
+                />
+              ) : (
+                <span className="pointer" onClick={handleEdit}>
+                  {place.arrival_time}
+                </span>
+              )}
+              {!isEditing && place.new_arrival_time && (
+                <span className="pointer text-danger" onClick={handleEdit}>
+                  <b>
+                    {" - "}
+                    {place.new_arrival_time}
+                  </b>
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+        {isEditing && (
+          <button onClick={handleSave} className="btn btn-warning mt-4 me-3">
+            Save
+          </button>
+        )}
+
+        <button onClick={() => navigate("/")} className="btn btn-primary mt-4">
+          Back
+        </button>
+      </div>
+    </div>
+  ) : (
+    <div className="card mt-4">
+      <h5 className="card-header">Loading...</h5>
+    </div>
+  );
 }
