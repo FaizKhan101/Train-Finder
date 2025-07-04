@@ -458,8 +458,3 @@ export const USERS = [
     password: "admin",
   },
 ];
-
-export function updateTrain(updatedTrain) {
-  const train = TRAINS.find((train) => train.train_number === updatedTrain.train_number);
-  train.route = updatedTrain.route;
-}

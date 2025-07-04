@@ -8,7 +8,8 @@ const trainSchema = new mongoose.Schema({
     route: [
         {
             station: String,
-            arrival_time: String
+            arrival_time: String,
+            new_arrival_time: String
         }
     ]
 });
