@@ -16,7 +16,7 @@ export default function Auth() {
     } else {
       signup(email, password);
     }
-    navigate("/");
+    navigate(-1);
   };
   return (
     <main className="form-signin m-auto mt-5 col-md-4">
