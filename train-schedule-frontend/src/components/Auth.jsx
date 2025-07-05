@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./Auth.context";
 import { useNavigate } from "react-router-dom";
+import logoImg from "../assets/logo.jpeg";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function Auth() {
         {" "}
         <img
           className="mb-4"
-          src="/src/assets/logo.jpeg"
+          src={logoImg}
           alt=""
           width="72"
           height="57"

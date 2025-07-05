@@ -48,7 +48,7 @@ export default function TrainForm() {
     e.preventDefault();
 
     console.log("Submitted Train:", train);
-    fetch("http://localhost:3000/train", {
+    fetch("/train", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

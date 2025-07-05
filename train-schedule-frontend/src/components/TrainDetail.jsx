@@ -28,7 +28,7 @@ export default function TrainDetail() {
     //    const train = TRAINS.find((train) => train.train_number === train_number);
     // train.route = route;
 
-    fetch("http://localhost:3000/update-train", {
+    fetch("/update-train", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export default function TrainDetail() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3000/trains/${trainNumber}/detail`)
+    fetch(`/trains/${trainNumber}/detail`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");

@@ -9,7 +9,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/trains`)
+    fetch(`/trains`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");
@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   function handleSearchTrain(text) {
-    fetch(`http://localhost:3000/trains/${text}`)
+    fetch(`/trains/${text}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Something went wrong.");
